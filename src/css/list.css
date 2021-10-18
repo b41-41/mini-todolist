@@ -1,0 +1,33 @@
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+  margin: auto;
+  height: 30px;
+}
+
+.checkbox {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+}
+
+.content {
+  padding: 0 15px;
+  width: 420px;
+  border: 0;
+  height: 30px;
+}
+
+.deleteBTN {
+  height: 30px;
+  width: 30px;
+  border: 0;
+  background-color: transparent;
+  transition: 300ms;
+}
+
+.deleteBTN:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
