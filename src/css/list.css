@@ -4,16 +4,31 @@
   width: 480px;
   margin: auto;
   height: 30px;
+  background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.list__item div {
+  background-color: white;
+  height: 30px;
+}
+
+.list__item--checkbox {
+  padding: 5px 0;
+  width: 30px;
 }
 
 .checkbox {
-  height: 30px;
-  width: 30px;
+  padding: 0, 5px;
+  height: 20px;
+  width: 20px;
   margin: 0;
 }
 
 .content {
-  padding: 0 15px;
+  padding: 0 10px;
   width: 420px;
   border: 0;
   height: 30px;
@@ -22,6 +37,7 @@
 .deleteBTN {
   height: 30px;
   width: 30px;
+  font-size: 18px;
   border: 0;
   background-color: transparent;
   transition: 300ms;

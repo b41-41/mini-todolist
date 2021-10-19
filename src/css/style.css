@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Oswald:wght@200&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+}
+
 h1 {
   text-align: center;
   font-family: "Oswald", sans-serif;
@@ -8,9 +16,5 @@ h1 {
 
 .todoList {
   font-family: "Nanum Gothic", sans-serif;
-  text-align: center;
-}
-
-.list {
   text-align: center;
 }

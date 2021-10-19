@@ -4,7 +4,7 @@ const List = () => {
     return (
         <>
             <div className="list__item">
-                <div>
+                <div className="list__item--checkbox">
                     <input
                         className="checkbox"
                         type="checkbox" />
