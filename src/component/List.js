@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../css/list.css';
+import Item from './Item';
 
 const List = () => {
 
@@ -23,33 +24,11 @@ const List = () => {
         setItems(todos.todoList);
     }, [todos])
 
-    // console.log(items);
-
     return (
         <>
             <p>해야할 일 : {todos.count}개</p>
 
-            {items.map(item =>
-                <div id={item.id} className="list__item">
-                    <div className="list__item--checkbox">
-                        <input
-                            className="checkbox"
-                            type="checkbox"
-                            checked={item.isCheck} />
-                    </div>
-                    <div>
-                        <input
-                            className="content"
-                            type="text"
-                            value={item.content} />
-                    </div>
-                    <div>
-                        <button
-                            className="deleteBTN"
-                            value="delete"
-                        >🗑</button>
-                    </div>
-                </div>
+            {items.map(item => <Item id={item.id} item={item} />
             )}
 
         </>
