@@ -2,14 +2,14 @@
   "todo": [
     {
       "id": "string1",
-      "content": "string",
-      "isCheck": false,
+      "content": "string111",
+      "isCheck": true,
       "createdAt": "2021-05-26T11:51:05.097Z"
     },
     {
       "id": "string2",
       "content": "string",
-      "isCheck": false,
+      "isCheck": true,
       "createdAt": "2021-05-26T16:15:25.729Z"
     },
     {
@@ -18,8 +18,8 @@
       "isCheck": true
     },
     {
-      "content": "sdsd",
-      "id": "hKMe4rn"
+      "content": "가나다라",
+      "id": "knAPivk"
     }
   ]
 }

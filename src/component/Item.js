@@ -4,6 +4,26 @@ const Item = ({ item: i }) => {
 
     const [item, setItem] = useState(i);
     const [isCheck, setIsCheck] = useState(item.isCheck);
+    const [isContent, setIsContent] = useState(item.content);
+
+    const onContent = (e) => {
+        const eventValue = e.target.value;
+        fetch(`http://localhost:3002/todo/${item.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...item,
+                content: eventValue
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    setIsContent(eventValue);
+                }
+            })
+    }
 
     const onDelete = () => {
         if (window.confirm(`삭제하시겠습니까?`)) {
@@ -17,10 +37,6 @@ const Item = ({ item: i }) => {
                 })
         };
     };
-
-    if (item.id === 0) {
-        return null;
-    }
 
     const onChange = () => {
         fetch(`http://localhost:3002/todo/${item.id}`, {
@@ -40,6 +56,10 @@ const Item = ({ item: i }) => {
             })
     };
 
+    if (item.id === 0) {
+        return null;
+    }
+
     return (
         <>
             <div id={item.id} className="list__item">
@@ -54,7 +74,8 @@ const Item = ({ item: i }) => {
                     <input
                         className="content"
                         type="text"
-                        value={item.content} />
+                        onChange={onContent}
+                        value={isContent} />
                 </div>
                 <div>
                     <button
