@@ -5,7 +5,6 @@ const Item = ({ item }) => {
     const [isCheck, setIsCheck] = useState(item.isCheck);
 
     const onChange = () => {
-        // setIsCheck(!isCheck);
         fetch(`http://localhost:3002/todo/${item.id}`, {
             method: 'PUT',
             headers: {
