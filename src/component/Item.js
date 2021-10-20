@@ -5,7 +5,22 @@ const Item = ({ item }) => {
     const [isCheck, setIsCheck] = useState(item.isCheck);
 
     const onChange = () => {
-        setIsCheck(!isCheck);
+        // setIsCheck(!isCheck);
+        fetch(`http://localhost:3002/todo/${item.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...item,
+                isCheck: !isCheck
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    setIsCheck(!isCheck);
+                }
+            })
     }
 
     return (

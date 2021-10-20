@@ -4,7 +4,7 @@ import Item from './Item';
 
 const List = () => {
 
-    const [todos, setTodos] = useState({});
+    const [todos, setTodos] = useState([]);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -18,19 +18,16 @@ const List = () => {
     }, []);
 
     useEffect(() => {
-        if (todos.todoList === undefined) {
+        if (todos === []) {
             return;
         }
-        setItems(todos.todoList);
-    }, [todos])
+        setItems(todos);
+    }, [todos]);
 
     return (
         <>
-            <p>해야할 일 : {todos.count}개</p>
-
-            {items.map(item => <Item id={item.id} item={item} />
-            )}
-
+            <p>해야할 일 : {items.length}개</p>
+            {items.map(item => <Item key={item.id} item={item} />)}
         </>
     );
 };
