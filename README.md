@@ -1,1 +1,1 @@
-# 미니인턴 과제2 To Do List App
+# RestAPI를 활용한 To Do List App
